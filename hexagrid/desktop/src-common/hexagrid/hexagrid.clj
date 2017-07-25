@@ -32,6 +32,10 @@
                      :sw [(- 1) 0 1]
                      :se [0 (- 1) 1]})
 
+;;(def axial-direction (reduce-kv (fn [m k v] (assoc m k (cube-to-axial v))) {} cube-direction))
+
+
+
 (def axial-direction {:es [1 0]
                       :ne [1 (- 1)]
                       :nw [0 (- 1)]
@@ -44,10 +48,11 @@
 (defn add-coords [& extra]
   (apply map + extra))
 
-(defn cube-to-axial [x y z] [x z])
+(defn cube-to-axial [& coords] (apply map (fn [x] x) coords))
 
 (defn axial-to-cube [x z] [x (- (+ x z)) x])
 
-(defn get-neighbors-cube [x y z] )
+(defn get-neighbors-cube [x y z] '())
+
 
 ;; (defn coord-to-hex)
