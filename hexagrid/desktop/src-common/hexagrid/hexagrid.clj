@@ -50,4 +50,4 @@
 
 (defn get-neighbors-cube [x y z] )
 
-(defn coord-to-hex)
+;; (defn coord-to-hex)
