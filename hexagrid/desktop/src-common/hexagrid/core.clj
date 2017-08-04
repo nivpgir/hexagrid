@@ -42,7 +42,7 @@
 
           hex (shape :line
                      :set-color (color :white)
-                     :polygon (float-array (h/hexa-corners 0 0 200 :angle-offset 267)))
+                     :polygon (float-array (h/hexa-corners 0 0 100 :angle-offset 45)))
           ]
       (list (assoc header :x 600 :y 800)
             (assoc rect :x 600 :y 600 :xvel 1 :yvel 1 :size rect-size)
