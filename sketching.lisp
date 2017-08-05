@@ -1,10 +1,10 @@
-
+;; (ql:quickload :swank)
 (ql:quickload :sketch)
 (defpackage :tutorial (:use :cl :sketch))
 (in-package :tutorial)
 
 (defun translate-to-segment (crd src-start src-len target-start target-len)
-  (format t "~%~% ~A ~A ~A ~A ~A" crd src-start src-len target-start target-len)
+  ;; (format t "~%~% ~A ~A ~A ~A ~A" crd src-start src-len target-start target-len)
   (+ target-start (* target-len (/ (- crd src-start) src-len))))
 
 
@@ -22,13 +22,13 @@
                                 for i = 0 then (1+ i)
                                 collect (* a (expt x i))))))
 (defsketch integral ((width 800) (height 600)
-                     (start (- 3))
-                     (end 3)
+                     (start (- 3.18))
+                     (end 3.18)
                      (len (- end start))
                      (nsteps width)
-                     (nrects 100)
+                     (nrects 50)
                      (rect-w (floor width nrects))
-                     (f (gen-poly 1 3 2 4 7 5 0 9))
+                     (f (gen-poly 0 (- 36) 0 49 0 (- 14) 0 1))
                      (points (plot-fun f start end width)))
 
   (loop for pl = points then (rest pl)
